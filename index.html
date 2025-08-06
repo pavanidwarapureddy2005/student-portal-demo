@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
-
-    <!-- 🔗 Link to your external CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMate - Mood Tracker</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="app-container">
     <header>
-        <h1>Welcome to My Website</h1>
+      <h1>🌤️ MoodMate</h1>
+      <p>Track your daily mood and note your thoughts 🧠</p>
     </header>
 
     <main>
-        <h2>About Me</h2>
-        <p>Hello! This is a simple HTML file. You can edit this section to add your own content.</p>
+      <section class="form-section">
+        <h2>How are you feeling today?</h2>
+        <form id="moodForm">
+          <label for="mood">Choose your mood:</label>
+          <select id="mood" required>
+            <option value="😊">Happy 😊</option>
+            <option value="😐">Neutral 😐</option>
+            <option value="😞">Sad 😞</option>
+            <option value="😡">Angry 😡</option>
+            <option value="😴">Tired 😴</option>
+          </select>
 
-        <h3>My Interests</h3>
-        <ul>
-            <li>Coding</li>
-            <li>Design</li>
-            <li>Music</li>
-        </ul>
+          <label for="note">Why do you feel this way?</label>
+          <textarea id="note" rows="3" placeholder="Write something..." required></textarea>
+
+          <button type="submit">📝 Save Mood</button>
+        </form>
+      </section>
+
+      <section class="history-section">
+        <h2>📆 Mood History (Last 7 Days)</h2>
+        <ul id="historyList"></ul>
+      </section>
     </main>
 
     <footer>
-        &copy; 2025 My Website. All rights reserved.
+      <p>Made with 💙 by You</p>
     </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
